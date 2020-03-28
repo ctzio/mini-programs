@@ -1,0 +1,20 @@
+REM The Collatz conjecture atari ST version. Written in GFA BASIC
+PRINT AT(1,1);"input a natural number"
+INPUT n
+CLS
+WHILE n<>1 AND counter<319
+ nold=LOG(n)
+ IF n MOD 2=0
+   n=n/2
+ ELSE
+   n=3*n+1
+ ENDIF
+ counter=counter+1
+ '  PRINT "n=";n
+ ' PRINT "counter=";counter
+ nnew=LOG(n)
+ CIRCLE 160-nnew,100-nnew,counter
+WEND
+IF INKEY$=" "
+ END
+ENDIF
